@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img, input{
+            display: block;
+            margin: 200px auto 0;
+            width: 150px;
+        }
+        input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<img src="img/a1.jpg" alt="" id="img">
+<input type="button" id="btn" value="开始播放">
+<audio src="audio/ma.mp3" id="voice"></audio>
+<script>
+    var voice=document.getElementById('voice');
+    var btn=document.getElementById('btn');
+    var img=document.getElementById('img');
+    var ary=['img/a1.jpg','img/a2.jpg','img/a3.jpg','img/a4.jpg','img/a5.jpg','img/a6.jpg','img/a7.jpg','img/a8.jpg','img/a9.jpg','img/a10.jpg','img/a11.jpg','img/a12.jpg'];
+    var n=0 ,m =0,i=2;
+    btn.onclick=function () {
+        i++;
+        if(i%2===1){
+        btn.value='暂停';
+        voice.play();
+        var timer = setInterval(function () {
+            if(i%2!==1){clearTimeout(timer)}
+            n++;
+            m++;
+            img.src = ary[n];
+            if (n===11){n=0}
+            if (m===99){
+                voice.currentTime = 0;
+                m = 0;
+            }
+        }, 50);
+        }else {
+            voice.pause();
+            btn.value='继续';
+        }
+    }
+
+</script>
+</body>
+</html>

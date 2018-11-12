@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--声音-->
+<audio autoplay loop >
+    <source src="audio/7987.mp3" type="audio/mp3">
+    <source src="audio/7987.wav" type="audio/wav">
+</audio>
+<!--数字时间图-->
+<img class="t1" src="img/0.JPG" alt=""><img class="t1" src="img/0.JPG" alt="">
+<img  src="img/c.JPG" alt="">
+<img class="t1" src="img/0.JPG" alt=""><img class="t1" src="img/0.JPG" alt="">
+<img  src="img/c.JPG" alt="">
+<img class="t1" src="img/0.JPG" alt=""><img class="t1" src="img/0.JPG" alt=""><br>
+<!--指针时间-->
+<div id="clock"><span></span><span></span><span></span><span></span><p>12</p><p>3</p><p>6</p><p>9</p><div id="Hours"></div><div id="Minutes"></div><div id="Seconds"></div><div></div><span></span><span></span><div></div><div></div><div></div></div>
+
+<script>
+//   获取指针
+    var oHours=document.getElementById('Hours');
+    var oMinutes=document.getElementById('Minutes');
+    var oSeconds=document.getElementById('Seconds');
+//   获取img对象数组
+    var t1=document.getElementsByClassName('t1');
+//   定义img地址数组
+    var ary=['img/0.JPG','img/1.JPG','img/2.JPG','img/3.JPG','img/4.JPG','img/5.JPG','img/6.JPG','img/7.JPG','img/8.JPG','img/9.JPG'];
+//   定时函数
+    setInterval(function () {
+        //获取系统时间
+        var Hours=new Date().getHours();
+        var Minutes=new Date().getMinutes();
+        var Seconds=new Date().getSeconds();
+        //数字时间
+        t1[0].src=ary[(Hours-Hours%10)/10];
+        t1[1].src=ary[Hours%10];
+        t1[2].src=ary[(Minutes-Minutes%10)/10] ;
+        t1[3].src=ary[Minutes%10];
+        t1[4].src=ary[(Seconds-Seconds%10)/10];
+        t1[5].src=ary[Seconds%10];
+        //指针时间
+        oSeconds.style.transform='rotate('+Seconds*6+'deg)';
+        oMinutes.style.transform='rotate('+(Minutes*6+Seconds*0.1)+'deg)';/*分针每秒动一次*/
+        oHours.style.transform='rotate('+(Hours*30+Minutes*0.5)+'deg)';/*时针钟每分动一次*/
+    },1000);
+</script>
+</body>
+</html>

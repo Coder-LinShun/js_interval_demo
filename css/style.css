@@ -1,0 +1,22 @@
+@charset "utf-8";body{text-align:center}
+#clock{position:relative;margin:50px auto;width:300px;height:300px;border:10px solid #000;border-radius:50%;background:#fff;box-shadow:0 0 35px 0 #1a1b1d inset,0 0 0 3px #fff}
+div div{position:absolute;transform-origin:center bottom}
+div div:nth-child(12){top:140px;left:140px;width:20px;height:20px;border-radius:50%;background:#000}
+div p{position:absolute;margin:0;width:60px;text-align:center;font:40px/60px "微软雅黑"}
+div p:nth-child(5){top:0;left:119px}
+div p:nth-child(6){top:120px;right:0}
+div p:nth-child(7){bottom:3px;left:120px}
+div p:nth-child(8){top:120px;left:0}
+#Hours{top:78px;left:144px;width:12px;height:72px;border-radius:7px;background:red;box-shadow:0 0 6px 0 #000}
+#Minutes{top:45px;left:145px;width:10px;height:105px;border-radius:5px;background:#00f;box-shadow:0 0 6px 0 #000}
+#Seconds{top:30px;left:148px;width:4px;height:170px;border-radius:2px;background:orange;box-shadow:0 0 4px 0 #000;transform-origin:center 120px}
+span{position:absolute;top:0;left:148px;display:block;width:4px;height:240px;border-top:30px solid #000;border-bottom:30px solid #000}
+div span:nth-child(1){transform:rotate(30deg)}
+div span:nth-child(2){transform:rotate(60deg)}
+div span:nth-child(3){transform:rotate(120deg)}
+div span:nth-child(4){transform:rotate(150deg)}
+div span:nth-child(13),div span:nth-child(14){left:142px;width:16px;height:274px;border-top:13px solid #000;border-bottom:13px solid #000}
+div span:nth-child(14){transform:rotate(90deg)}
+div div:nth-child(15){top:140px;left:-40px;z-index:-1;width:340px;height:160px;border:20px solid #000;border-radius:8px 8px 185px 185px;box-shadow:0 0 6px 0 #000,0 0 6px 0 #000 inset}
+div div:nth-child(16){top:320px;left:120px;width:60px;height:50px;background:#000;box-shadow:0 0 4px 0 #000}
+div div:nth-child(17){top:350px;left:0;width:300px;height:30px;border-radius:300px 300px 80px 80px;background:#000;box-shadow:0 0 6px 0 #000}
